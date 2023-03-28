@@ -13,7 +13,6 @@ const Navbar = ({isAuthenticated}) => {
           {isAuthenticated? ( 
               <>
                 <Link to="/articles"  exact className="ml-5"></Link>
-                <Link to="/mymemes"  exact className="ml-5">my jokes</Link>
                 <Link 
                 //  onClick={handleLogout}
                   to="/logout" exact className="ml-5">Logout</Link>
