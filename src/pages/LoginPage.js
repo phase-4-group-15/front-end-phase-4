@@ -7,14 +7,13 @@ const LoginPage = () => {
   const [showLogin, setShowLogin] = useState(true);
 
 return ( 
-     <div className="max-w-500 mx-auto my-0 mt-16 px-16">
+     <div className="max-w-500 mx-auto my-0 mt-12 px-16">
         
          {showLogin ? (
-            <>
-            <LoginUser
-         />
+            <div>
+        
             <hr className="border-none border-b-1 border-gray-900 my-1" />
-            <p className="my-2 flex justify-center">
+            <p className="my-4 flex justify-center">
                   Want to Login as Author? &nbsp;
                 <button
                 className=" text-teal-600 font-bold px-4  rounded"
@@ -23,10 +22,10 @@ return (
                 Login as Author
                 </button>
             </p>
-            </>
+            <LoginUser />
+            </div>
         ) : (
-            <>
-            <LoginAuthor />
+            <div>
             <hr className="border-none border-b-1 flex justify-center border-gray-900 my-1" />
             <p className="my-4 flex justify-center">
                 want to login as User
@@ -37,7 +36,8 @@ return (
                 Signup as User
                 </button>
             </p>
-            </>
+             <LoginAuthor />
+            </div>
         )} 
 
    
