@@ -1,4 +1,3 @@
-import ArticlesPage from "./ArticlesPage";
 
 
 const LandingPage = () => {
