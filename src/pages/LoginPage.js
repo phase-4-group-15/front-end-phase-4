@@ -6,7 +6,8 @@ const LoginPage = () => {
         <div>
             <LoginUser/>
             <LoginAuthor/>
-            LoginPage</div>
+            LoginPage
+            </div>
      );
 }
  

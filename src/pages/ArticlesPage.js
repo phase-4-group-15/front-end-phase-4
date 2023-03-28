@@ -1,4 +1,5 @@
 import ArticlesCardList from "../components/ArticlesCardList";
+import Search from "../components/Search";
 import Sidebar from "../components/Sidebar";
 import ArticleReadPage from "./ArticleReadPage";
 
@@ -9,6 +10,7 @@ const ArticlesPage = () => {
       <Sidebar />
        <ArticleReadPage />
        <ArticlesCardList />
+        <Search />
     </div>
      );
 }

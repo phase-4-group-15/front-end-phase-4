@@ -1,6 +1,6 @@
 const ArticleReadPage = () => {
     return ( 
-        <div>Read all articles </div>
+        <div>Read article ........ </div>
      );
 }
  

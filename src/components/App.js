@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react'
 import ArticlesPage from '../pages/ArticlesPage';
 function App() {
 
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   return (
     <div className="App">
