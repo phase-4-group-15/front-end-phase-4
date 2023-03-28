@@ -6,7 +6,7 @@ const SignupPage = () => {
         <h1>
             <SignUpAuthor/>
             <SignUpUser/>
-            signup as user or author
+             signup as user or author
             
             </h1>
      );

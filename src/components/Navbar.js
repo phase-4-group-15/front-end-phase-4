@@ -1,6 +1,6 @@
 const Navbar = () => {
     return ( 
-       <header>Article 254</header>
+       <header>Article 254 navbar ....</header>
       );
 }
  
