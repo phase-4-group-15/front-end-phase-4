@@ -1,12 +1,10 @@
 import ArticlesPage from "./ArticlesPage";
-import Navbar from "../components/Navbar";
+
 
 const LandingPage = () => {
     return ( 
         <main>
-            <Navbar/>
-            
-            <ArticlesPage/>
+           <h1>welcome</h1>
         </main>
      );
 }
