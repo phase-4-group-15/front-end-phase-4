@@ -5,6 +5,7 @@ import Navbar from './Navbar';
 import { Routes , Route, useNavigate} from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import ArticlesPage from '../pages/ArticlesPage';
+import ArticleReadPage from '../pages/ArticleReadPage';
 function App() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -19,6 +20,7 @@ function App() {
           {isAuthenticated && (
             <>
               <Route path="/articles" element={<ArticlesPage />} /> 
+              <Route  path='/articles/:id' element={< ArticleReadPage/>}/>
             </>
           )}
         </Routes>
