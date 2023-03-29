@@ -5,12 +5,20 @@ import ArticleReadPage from "./ArticleReadPage";
 
 const ArticlesPage = () => {
     return (
-    <div>
-      <h1 className="text-red-800">this is where the main artcles will go</h1>
-      <Sidebar />
-       <ArticleReadPage />
-       <ArticlesCardList />
-        <Search />
+    <div className="flex ">
+      <div className="w-1/5">
+          <Sidebar />
+      </div>
+      <div className="flex-grow">
+        <div className="py-4">
+            <Search />
+        </div>
+
+           {/* <ArticleReadPage /> */}
+        <div className="flex-grow overflow-y-auto">
+           <ArticlesCardList />
+        </div>
+      </div>
     </div>
      );
 }

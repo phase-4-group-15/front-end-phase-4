@@ -37,6 +37,7 @@
     ]
   },
   "devDependencies": {
+    "json-server": "^0.17.3",
     "tailwindcss": "^3.2.7"
   }
 }
