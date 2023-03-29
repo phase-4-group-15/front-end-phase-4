@@ -1,10 +1,8 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-
-import { useNavigate} from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom";
 
 const ArticlesCardList = () => {
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const [articles, setArticles] = useState([]);
 
@@ -48,22 +46,21 @@ const ArticlesCardList = () => {
     <div className="grid grid-cols-3 gap-4 p-4">
       {articles.map(article => (
         <div key={article.id} className="bg-white rounded-lg shadow-md p-5 relative">
-          <h2 className="text-xl font-semibold cursor-pointer hover:text-blue-500" onClick={() => navigate(`/articles/${article.id}`)}>{article.title}</h2>
-          <p className="text-gray-700 mb-4">{`${article.description.split(' ').slice(0, 15).join(' ')}  ..........read more`}</p>
+          <Link to={`/articles/${article.id}`} className="text-xl font-semibold cursor-pointer hover:text-blue-500">{article.title}</Link>
+          <p className="text-gray-700 mb-4">{`${article.description.slice(0, 150)}${article.description.length > 150 ? "..." : ""}`}</p>
           <div className="">
             <div className="flex justify-between   border">
-                <div className="flex justify-around">
+              <div className="flex justify-around">
                 <button className="text-gray-500 hover:text-blue-500 mr-2" onClick={() => handleLike(article.id)}>+ {article.likes}</button>
                 <button className="text-gray-500 hover:text-red-500 mr-2" onClick={() => handleDislike(article.id)}>- {article.dislikes}</button>
-                </div>
-            <button className="text-red-500 hover:text-red-500 " onClick={() => handleDelete(article.id)}>Delete</button>
+              </div>
+              <button className="text-red-500 hover:text-red-500 " onClick={() => handleDelete(article.id)}>Delete</button>
             </div>
           </div>
         </div>
-
       ))}
     </div>
   );
 }
 
-export default ArticlesCardList
+export default ArticlesCardList;

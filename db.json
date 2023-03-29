@@ -1,28 +1,32 @@
 {
-  "articles": [
-    {
-      "id": 1,
-      "title": "Arsenal's Recent Form",
-      "category": "Sports",
-      "description": "Arsenal have been struggling for form in the Premier League this season, with the team currently sitting mid-table. Despite some promising performances in the Europa League, manager Mikel Arteta will need to find a way to get the team firing in the league if they want to compete for a top-four finish.",
-      "likes": 16,
-      "dislikes": 12
-    },
-    {
-      "id": 2,
-      "title": "The State of Kenyan Politics",
-      "category": "Politics",
-      "description": "Kenya's political landscape has been characterized by tension and uncertainty in recent years, with issues such as corruption, ethnic tensions, and the COVID-19 pandemic all playing a role. The upcoming general elections in 2022 will be a crucial moment for the country, with many hoping for a peaceful and fair process that can set Kenya on a path towards stability and progress.",
-      "likes": 15,
-      "dislikes": 3
-    },
-    {
-      "id": 3,
-      "title": "2022 Fashion Trends",
-      "category": "Fashion",
-      "description": "As we move into 2022, fashion trends are continuing to evolve and adapt to changing social and cultural contexts. Sustainable and ethical fashion remains a growing movement, with more and more brands prioritizing responsible sourcing and production. Other trends for the year include bold, colorful prints and statement pieces, as well as a continued focus on comfort and versatility in clothing.",
-      "likes": 17,
-      "dislikes": 10
-    }
-  ]
-}
+    "articles": [
+      {
+        "id": 1,
+        "title": "Arsenal's Recent Form",
+        "category": "Sports",
+        "description": "Arsenal have been struggling for form in the Premier League this season, with the team currently sitting mid-table. Despite some promising performances in the Europa League, manager Mikel Arteta will need to find a way to get the team firing in the league if they want to compete for a top-four finish.",
+        "likes": 16,
+        "dislikes": 12,
+        "image": "https://i2-prod.dailystar.co.uk/incoming/article28194105.ece/ALTERNATES/s615/0_JS280028828.jpg"
+      },
+      {
+        "id": 2,
+        "title": "The State of Kenyan Politics",
+        "category": "Politics",
+        "description": "Kenya's political landscape has been characterized by tension and uncertainty in recent years, with issues such as corruption, ethnic tensions, and the COVID-19 pandemic all playing a role. The upcoming general elections in 2022 will be a crucial moment for the country, with many hoping for a peaceful and fair process that can set Kenya on a path towards stability and progress.",
+        "likes": 15,
+        "dislikes": 3,
+        "image": "https://example.com/image2.jpg"
+      },
+      {
+        "id": 3,
+        "title": "2022 Fashion Trends",
+        "category": "Fashion",
+        "description": "As we move into 2022, fashion trends are continuing to evolve and adapt to changing social and cultural contexts. Sustainable and ethical fashion remains a growing movement, with more and more brands prioritizing responsible sourcing and production. Other trends for the year include bold, colorful prints and statement pieces, as well as a continued focus on comfort and versatility in clothing.",
+        "likes": 17,
+        "dislikes": 10,
+        "image": "https://example.com/image3.jpg"
+      }
+    ]
+  }
+  
