@@ -11,11 +11,11 @@ import CreateArticle from '../pages/CreateArticle';
 
 function App() {
 
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   return (
     <div className="App">
-        <Navbar />
+        <Navbar setIsAuthenticated={setIsAuthenticated} isAuthenticated={isAuthenticated} />
         <Routes>
           <Route path="/login" element={<LoginPage setIsAuthenticated={setIsAuthenticated} />} />
           <Route path="/Signup" element={<SignupPage setIsAuthenticated={setIsAuthenticated} />} />

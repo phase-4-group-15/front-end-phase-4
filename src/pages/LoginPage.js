@@ -2,7 +2,7 @@ import LoginAuthor from "../components/LoginAuthor";
 import LoginUser from "../components/LoginUser";
 import React, { useState } from 'react'
 
-const LoginPage = () => {
+const LoginPage = ({setIsAuthenticated}) => {
 
   const [showLogin, setShowLogin] = useState(true);
 
@@ -15,7 +15,7 @@ const LoginPage = () => {
         </div>
         {showLogin ? (
           <div>
-            <LoginUser />
+            <LoginUser setIsAuthenticated={setIsAuthenticated} />
           </div>
         ) : (
           <div>

@@ -1,36 +1,30 @@
 import { useNavigate} from "react-router-dom"
 import {  Link } from "react-router-dom"
 
-const SignUpUser = () => {
+const SignUpUser = ({ setIsAuthenticated }) => {
 
     const navigate = useNavigate()
 
     // register Author
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // setIsAuthenticated(true);
-        navigate('/articles');
-        // const form = e.target;
-        // const formData = new FormData(form);
-      
-        // try {
-        //   const response = await fetch('https://dad-jokes-8fzp.onrender.com/users', {
-        //     method: 'POST',
-        //     body: formData,
-        //   });
-      
-        //   if (response.ok) {
-        //     // setIsAuthenticated(true);
-        //     // navigate('/allmemes');
-        //   } else {
-        //     const errorData = await response.json();
-        //     console.log(errorData);
-        //     setIsAuthenticated(true);
-        //     navigate('/allmemes');
-        //   }
-        // } catch (error) {
-        //   console.error(error);
-        // }
+        const form = e.target;
+        const formData = new FormData(form);
+        try {
+          const response = await fetch('http://127.0.0.1:3000/users/signup', {
+            method: 'POST',
+            body: formData,
+          })
+          if (response.ok) {
+            setIsAuthenticated(true);
+            navigate('/articles');
+          } else {
+            const errorData = await response.json();
+            console.log(errorData);
+          }
+        } catch (error) {
+          console.error(error);
+        }
       }
       
     return ( 
@@ -68,6 +62,18 @@ const SignUpUser = () => {
             <input autoComplete="off" class="border-2  border-gray-100 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-200" id="email" type="text" name="email"  placeholder="Jane Doe" required/>
           </div>
         </div>
+
+        <div class="md:flex md:items-center mb-6">   
+          <div class="md:w-1/3">
+            <label class="block text-gray-700 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-username" id="bio">
+              bio
+            </label>
+          </div>
+          <div class="md:w-2/3">
+            <input autoComplete="off" class="border-2  border-gray-100 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-200" id="bio" type="text" name="bio"  placeholder="eg. tech" required/>
+          </div>
+        </div>
+
         <div class="md:flex md:items-center mb-6">
           <div class="md:w-1/3">
             <label class="block text-gray-700 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
@@ -78,6 +84,17 @@ const SignUpUser = () => {
             <input autoComplete="off" class="border-2  border-gray-100 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-200" id="password" type="password" name="password" placeholder="******************" required/>
           </div>
         </div>
+
+        {/* <div class="md:flex md:items-center mb-6">
+          <div class="md:w-1/3">
+            <label class="block text-gray-700 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-password">
+             confirm Password
+            </label>
+          </div>
+          <div class="md:w-2/3">
+            <input autoComplete="off" class="border-2  border-gray-100 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-200" id="confirm_password" type="password" name="confirm_password" placeholder="******************" required/>
+          </div>
+        </div> */}
     
         <div class="md:flex md:items-center mb-5">
           <div class="md:w-1/3"></div>

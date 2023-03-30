@@ -15,7 +15,7 @@ const ArticlesPage = () => {
   };
 
   useEffect(() => {
-    fetch("http://localhost:3004/articles")
+    fetch("http://localhost:3000/users/articles")
       .then((response) => response.json())
       .then((data) => {
         const filtered = data.filter((article) =>

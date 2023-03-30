@@ -6,9 +6,12 @@ const ArticlesCardList = ({ category, articles, setArticles  }) => {
 
 
     useEffect(() => {
-      fetch('http://localhost:3004/articles')
+      fetch('http://localhost:3000/users/articles')
         .then((response) => response.json())
-        .then((data) => setArticles(data))
+        .then((data) => {
+           console.log(data)
+           setArticles(data)
+          })
         .catch((error) => console.log(error));
     }, []);
   
@@ -21,7 +24,7 @@ const ArticlesCardList = ({ category, articles, setArticles  }) => {
       }
   
     const handleLike = (id) => {
-      fetch(`http://localhost:3004/articles/${id}`, {
+      fetch(`http://localhost:3000/users/articles/${id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ likes: articles.find((article) => article.id === id).likes + 1 }),
@@ -32,7 +35,7 @@ const ArticlesCardList = ({ category, articles, setArticles  }) => {
     };
   
     const handleDislike = (id) => {
-      fetch(`http://localhost:3004/articles/${id}`, {
+      fetch(`http://localhost:3000/users/articles/${id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ dislikes: articles.find((article) => article.id === id).dislikes + 1 }),
@@ -43,7 +46,7 @@ const ArticlesCardList = ({ category, articles, setArticles  }) => {
     };
   
     const handleDelete = (id) => {
-      fetch(`http://localhost:3004/articles/${id}`, { method: 'DELETE' })
+      fetch(`http://localhost:3000/users/articles/${id}`, { method: 'DELETE' })
         .then((response) => response.json())
         .then((data) => setArticles(articles.filter((article) => article.id !== id)))
         .catch((error) => console.log(error));
@@ -68,9 +71,9 @@ const ArticlesCardList = ({ category, articles, setArticles  }) => {
             <div className="">
               <div className="flex justify-between border-teal-300  border-t">
                 <div className="flex justify-around">
-                  <button className="text-gray-500 hover:text-blue-500 mr-5 mt-3" onClick={() => handleLike(article.id)}>
+                  {/* <button className="text-gray-500 hover:text-blue-500 mr-5 mt-3" onClick={() => handleLike(article.id)}>
                   <ion-icon name="thumbs-up-outline"></ion-icon>{article.likes}
-                  </button>
+                  </button> */}
                   <button className="text-gray-500 hover:text-red-500 mr-2 mt-3" onClick={() => handleDislike(article.id)}>
                   <ion-icon name="thumbs-down-outline"></ion-icon> {article.dislikes}
                   </button>

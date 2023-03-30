@@ -7,9 +7,12 @@ const ArticleReadPage = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:3004/articles/${id}`)
+    fetch(`http://localhost:3000/users/articles/${id}`)
       .then(response => response.json())
-      .then(data => setArticle(data))
+      .then(data => {
+        console.log(data)
+        setArticle(data)
+      })
       .catch(error => console.log(error))
   }, [id]);
 
@@ -21,7 +24,7 @@ const ArticleReadPage = () => {
     <div className=" p-4 w-3/4 flex justify-center items-center ml-40 ">
       <div className="bg-white rounded-lg shadow-md p-5">
         <h2 className="text-3xl font-semibold mb-4">{article.title}</h2>
-        <img src={article.image} alt={article.title} className="w-full  mb-4" />
+        <img src={article.image} alt={article.title} className="w-full  mb-4"/>
         <p className="text-gray-700 mb-4">{article.description}</p>
         <div className="flex justify-between border-t pt-4">
           <Link to="/articles" className="text-teal-500  hover:underline">

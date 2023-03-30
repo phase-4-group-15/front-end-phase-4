@@ -2,38 +2,36 @@ import React, { useState } from 'react'
 import {  Link } from "react-router-dom"
 import { useNavigate} from "react-router-dom"
 
-const LoginUser = () => {
+const LoginUser = ({ setIsAuthenticated }) => {
 
  const navigate = useNavigate()
     
-// login Author
+// login user
 const handleLogin = (e) => {
     e.preventDefault();
-    navigate('/articles');
-    // const form = e.target;
-    // const formData = new FormData(form);
-  
-    // fetch('', {
-    //   method: 'POST',
-    //   body: formData,
-    // }) 
-    //   .then(response => {
-    //     if (response.ok) {
-    //       return response.json();
-    //     } else {
-    //       throw new Error('Network response was not ok.');
-    //     }
-    //   })
-    //   .then(data => {
-    //     console.log(data)
-    //     // setIsAuthenticated(true);
-    //     // setUsername(data.username); 
-    //     // setUserId(data.userId);
-    //     // navigate('/articles');
-    //   })
-    //   .catch(error => {
-    //     console.error('There was a problem with the fetch operation:', error);
-    //   });
+    const form = e.target;
+    const formData = new FormData(form);
+    fetch('http://127.0.0.1:3000/users/login', {
+      method: 'POST',
+      body: formData,
+    }) 
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Network response was not ok.');
+        }
+      })
+      .then(data => {
+        console.log(data)
+        setIsAuthenticated(true);
+        // setUsername(data.username); 
+        // setUserId(data.userId);
+        navigate('/articles');
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
   };
 
 
