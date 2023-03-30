@@ -34,7 +34,7 @@ const SignUpUser = () => {
       }
       
     return ( 
-        <div className="flex justify-center items-center ">
+    <div className="flex justify-center items-center ">
         <form class="w-full max-w-sm bg-slate-300 shodow-xl rounded-xl p-5 mt-20 "noValidate no-autocomplete
          onSubmit={handleSubmit}
          >
@@ -88,7 +88,7 @@ const SignUpUser = () => {
             </div>
           </div>  
         </form>
-      </div>
+  </div>
      );
 }
  

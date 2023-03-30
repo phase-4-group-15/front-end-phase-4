@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {  useEffect } from "react";
+import { Link } from "react-router-dom";
+import deleteIcon from "../images/icon-delete.svg"
 
 const ArticlesCardList = ({ category, articles, setArticles  }) => {
-    const navigate = useNavigate();
 
 
-   
-  
     useEffect(() => {
       fetch('http://localhost:3004/articles')
         .then((response) => response.json())
@@ -37,7 +35,7 @@ const ArticlesCardList = ({ category, articles, setArticles  }) => {
       fetch(`http://localhost:3004/articles/${id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ dislikes: articles.find((article) => article.id === id).dislikes - 1 }),
+        body: JSON.stringify({ dislikes: articles.find((article) => article.id === id).dislikes + 1 }),
       })
         .then((response) => response.json())
         .then((data) => setArticles(articles.map((article) => (article.id === data.id ? data : article))))
@@ -52,7 +50,7 @@ const ArticlesCardList = ({ category, articles, setArticles  }) => {
     };
   
     return (
-        <div className="grid grid-cols-3 gap-4 p-4">
+    <div className="grid grid-cols-3 gap-4 p-4">
         {filteredArticles.map((article) => (
           <div key={article.id} className="bg-white rounded-lg shadow-md p-5 relative">
             <div className="flex justify-between items-center">
@@ -70,22 +68,21 @@ const ArticlesCardList = ({ category, articles, setArticles  }) => {
             <div className="">
               <div className="flex justify-between border-teal-300  border-t">
                 <div className="flex justify-around">
-                  <button className="text-gray-500 hover:text-blue-500 mr-2" onClick={() => handleLike(article.id)}>
-                    + {article.likes}
+                  <button className="text-gray-500 hover:text-blue-500 mr-5 mt-3" onClick={() => handleLike(article.id)}>
+                  <ion-icon name="thumbs-up-outline"></ion-icon>{article.likes}
                   </button>
-                  <button className="text-gray-500 hover:text-red-500 mr-2" onClick={() => handleDislike(article.id)}>
-                    - {article.dislikes}
+                  <button className="text-gray-500 hover:text-red-500 mr-2 mt-3" onClick={() => handleDislike(article.id)}>
+                  <ion-icon name="thumbs-down-outline"></ion-icon> {article.dislikes}
                   </button>
                 </div>
-                <button className="text-red-500 hover:text-red-500 " onClick={() => handleDelete(article.id)}>
-                  Delete
+                <button className="text-red-500 hover:text-red-500 mt-3 " onClick={() => handleDelete(article.id)}>
+                  <img src={deleteIcon} alt="delete" />
                 </button>
               </div>
             </div>
           </div>
         ))}
-      </div>
-      
+    </div>
     );
   };
   

@@ -5,8 +5,8 @@
       "title": "Arsenal's Recent Form",
       "category": "Sports",
       "description": "Arsenal's recent form has been a cause for concern for the club's supporters and manager alike. The London-based club is currently languishing in mid-table, with only a few glimpses of the attractive, attacking football that has been synonymous with the club in recent history. The Gunners have struggled to put together a consistent run of form in the Premier League this season, with frustrating losses to teams lower down in the table. Manager Mikel Arteta has been vocal in his frustration with the team's performances, emphasizing the need for the players to take responsibility for their form and for the club to develop a winning mentality. While Arsenal have shown promise in other competitions, such as the Europa League, it is clear that the Premier League remains the primary focus for the club. The team's fortunes will depend on the ability of key players such as Pierre-Emerick Aubameyang and Bukayo Saka to rediscover their form and lead the team forward.",
-      "likes": 17,
-      "dislikes": 11,
+      "likes": 23,
+      "dislikes": 13,
       "image": "https://i2-prod.dailystar.co.uk/incoming/article28194105.ece/ALTERNATES/s615/0_JS280028828.jpg"
     },
     {
@@ -15,7 +15,7 @@
       "category": "Politics",
       "description": "Kenya's political landscape has been characterized by tension and uncertainty in recent years, with issues such as corruption, ethnic tensions, and the COVID-19 pandemic all playing a role. The upcoming general elections in 2022 will be a crucial moment for the country, with many hoping for a peaceful and fair process that can set Kenya on a path towards stability and progress.",
       "likes": 17,
-      "dislikes": 3,
+      "dislikes": 2,
       "image": "https://example.com/image2.jpg"
     },
     {
@@ -26,6 +26,15 @@
       "likes": 17,
       "dislikes": 10,
       "image": "https://example.com/image3.jpg"
+    },
+    {
+      "title": " OpenAI and ChatGPT ",
+      "category": "Tech",
+      "description": "Artificial Intelligence has become an integral part of the tech world. One of the most prominent names in this field is OpenAI. OpenAI is an organization that focuses on developing advanced AI models, and it has been at the forefront of AI research for several years. One of its most significant achievements is the development of ChatGPT, a conversational AI that can perform various tasks, including language translation and summarization.\n\nChatGPT is an impressive AI model that has attracted a lot of attention in the tech world. It uses a neural network architecture that is trained on a massive amount of data to generate human-like responses to questions. This model has been used in various applications, including chatbots, language translation, and question-answering systems. It has been shown to be highly accurate and efficient, making it one of the most promising AI models in the industry.\n\nOpenAI's work on ChatGPT has not gone unnoticed, and the organization has received recognition from the tech community. Recently, OpenAI released a new version of ChatGPT, known as GPT-3. This new model has more than 175 billion parameters, making it one of the most significant language models ever created. Its ability to generate high-quality human-like responses has made it a popular choice for companies looking to develop advanced chatbots and virtual assistants.\n\nThe rise of OpenAI and ChatGPT in the tech world has been impressive, and it has opened up new possibilities for the development of AI. With the increasing demand for AI applications, it is clear that OpenAI and its AI models will continue to play a significant role in the tech industry. As the technology continues to evolve, we can only expect to see more advanced AI models like ChatGPT and GPT-3 in the future.\n\nIn conclusion, OpenAI and ChatGPT have made significant contributions to the tech world by developing advanced AI models that have the potential to revolutionize the industry. With the continued development of AI technology, it is clear that these models will continue to play an essential role in shaping the future of the tech world.",
+      "imageUrl": "https://www.klippa.com/wp-content/uploads/2023/01/ChatGPT-preview.jpg",
+      "id": 4,
+      "likes": 4,
+      "dislikes": 3
     }
   ]
 }

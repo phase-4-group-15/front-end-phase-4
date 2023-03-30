@@ -2,11 +2,13 @@ import LandingPage from '../pages/LandingPage';
 import LoginPage from '../pages/LoginPage';
 import SignupPage from '../pages/SignupPage';
 import Navbar from './Navbar';
-import { Routes , Route, useNavigate} from 'react-router-dom'
-import React, { useState, useEffect } from 'react'
+import { Routes , Route} from 'react-router-dom'
+import React, { useState} from 'react'
 import ArticlesPage from '../pages/ArticlesPage';
 import ArticleReadPage from '../pages/ArticleReadPage';
 import CreateArticle from '../pages/CreateArticle';
+
+
 function App() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(true);

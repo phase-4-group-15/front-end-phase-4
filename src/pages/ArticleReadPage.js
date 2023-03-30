@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
 const ArticleReadPage = () => {
+
   const [article, setArticle] = useState(null);
   const { id } = useParams();
 
@@ -13,7 +14,7 @@ const ArticleReadPage = () => {
   }, [id]);
 
   if (!article) {
-    return <div>Loading...</div>
+    return <div className="text-3xl text-teal-600 text-center">article check 1, 2 .....</div>
   }
 
   return (
@@ -23,10 +24,6 @@ const ArticleReadPage = () => {
         <img src={article.image} alt={article.title} className="w-full  mb-4" />
         <p className="text-gray-700 mb-4">{article.description}</p>
         <div className="flex justify-between border-t pt-4">
-          <div className="flex justify-around">
-            <button className="text-gray-500 hover:text-blue-500 mr-2">{`+ ${article.likes}`}</button>
-            <button className="text-gray-500 hover:text-red-500 mr-2">{`- ${article.dislikes}`}</button>
-          </div>
           <Link to="/articles" className="text-blue-500 hover:underline">Back to Articles</Link>
         </div>
       </div>

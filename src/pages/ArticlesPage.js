@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
 import ArticlesCardList from "../components/ArticlesCardList";
 import Search from "../components/Search";
 import Sidebar from "../components/Sidebar";
 
 const ArticlesPage = () => {
-  const navigate = useNavigate();
+ 
 
   const [category, setCategory] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
