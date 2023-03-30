@@ -14,12 +14,12 @@ const Search = ({ onSearch }) => {
       <input
         name="search"
         type="text"
-        placeholder="Search article ....."
+        placeholder="Search article by title ....."
         value={query}
         onChange={handleSearchChange}
-        className="bg-slate-100 rounded-xl py-5 px-12 w-full text-gray-900 shadow-md focus:outline-none focus:bg-slate-200 focus:shadow-outline mr-2"
+        className="bg-slate-0 rounded-xl py-5 px-12 w-full text-gray-900 shadow-md focus:outline-none focus:bg-slate-50 focus:shadow-outline mr-2"
       />
-      <span className="absolute inset-y-0 left-0 flex text-2xl bg-slate-100 shadow-sm pr-1 rounded-md items-center pl-4">
+      <span className="absolute inset-y-0 left-0 flex text-2xl bg-slate- shadow-sm pr-3 pl-3 rounded-md items-center ">
         <ion-icon name="search"></ion-icon>
       </span>
     </form>

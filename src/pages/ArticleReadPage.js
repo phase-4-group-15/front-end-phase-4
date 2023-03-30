@@ -24,7 +24,8 @@ const ArticleReadPage = () => {
         <img src={article.image} alt={article.title} className="w-full  mb-4" />
         <p className="text-gray-700 mb-4">{article.description}</p>
         <div className="flex justify-between border-t pt-4">
-          <Link to="/articles" className="text-blue-500 hover:underline">Back to Articles</Link>
+          <Link to="/articles" className="text-teal-500  hover:underline">
+           <span className="text-3xl"> <ion-icon name="arrow-back-circle-outline"></ion-icon></span></Link>
         </div>
       </div>
     </div>

@@ -39,7 +39,7 @@ const handleLogin = (e) => {
 
     return ( 
     <div className="flex justify-center items-center">
-        <form class="w-full max-w-sm shadow-xl rounded-xl p-5 mt-4 bg-teal-100 " noValidate no-autocomplete onSubmit={handleLogin} >
+        <form class="w-full max-w-sm shadow-xl rounded-xl p-5 mt-4 " noValidate no-autocomplete onSubmit={handleLogin} >
               <h1 className="text-2xl text-teal-500 text-center mb-6  font-bold"> Author login</h1>
           <div class="md:flex md:items-center mb-6">
               
