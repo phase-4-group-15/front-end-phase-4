@@ -7,6 +7,7 @@ import React, { useState} from 'react'
 import ArticlesPage from '../pages/ArticlesPage';
 import ArticleReadPage from '../pages/ArticleReadPage';
 import CreateArticle from '../pages/CreateArticle';
+import Footer from '../pages/Footer';
 
 
 function App() {
@@ -27,7 +28,9 @@ function App() {
               <Route  path='/createarticle' element={< CreateArticle/>}/>
             </>
           )}
+         
         </Routes>
+        <Footer/>
     </div>
   );
 }

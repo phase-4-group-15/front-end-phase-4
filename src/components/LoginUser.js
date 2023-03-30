@@ -10,30 +10,30 @@ const LoginUser = () => {
 const handleLogin = (e) => {
     e.preventDefault();
     navigate('/articles');
-    // const form = e.target;
-    // const formData = new FormData(form);
+    const form = e.target;
+    const formData = new FormData(form);
   
-    // fetch('', {
-    //   method: 'POST',
-    //   body: formData,
-    // }) 
-    //   .then(response => {
-    //     if (response.ok) {
-    //       return response.json();
-    //     } else {
-    //       throw new Error('Network response was not ok.');
-    //     }
-    //   })
-    //   .then(data => {
-    //     console.log(data)
-    //     // setIsAuthenticated(true);
-    //     // setUsername(data.username); 
-    //     // setUserId(data.userId);
-    //     // navigate('/articles');
-    //   })
-    //   .catch(error => {
-    //     console.error('There was a problem with the fetch operation:', error);
-    //   });
+    fetch('', {
+      method: 'POST',
+      body: formData,
+    }) 
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        } else {
+          throw new Error('Network response was not ok.');
+        }
+      })
+      .then(data => {
+        console.log(data)
+        setIsAuthenticated(true);
+        setUsername(data.username); 
+        setUserId(data.userId);
+        navigate('/articles');
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+      });
   };
 
 
