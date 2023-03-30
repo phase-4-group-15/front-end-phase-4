@@ -9,10 +9,10 @@ const Navbar = ({isAuthenticated}) => {
         </div>
         <div className="flex items-center flex-shrink-0 text-teal-500 font-bold justify-center">
           <Link to="/"  exact className=" ml-5">Home</Link>
-       
+          <Link to="/articles"  exact className="ml-5">Articles</Link>
           {isAuthenticated? ( 
               <>
-                <Link to="/articles"  exact className="ml-5"></Link>
+                {/* <Link to="/articles"  exact className="ml-5"></Link> */}
                 <Link 
                 //  onClick={handleLogout}
                   to="/logout" exact className="ml-5">Logout</Link>
