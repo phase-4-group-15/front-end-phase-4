@@ -29,14 +29,14 @@ const ArticlesPage = () => {
 
   return (
     <div className="flex p-5 ">
-      <div className="w-1/4 h-screen">
+      <div className=" ">
         <Sidebar setCategory={setCategory} />
       </div>
-      <div className="flex-grow">
+      <div className="flex-grow ">
         <div className="py-4">
           <Search onSearch={handleSearch} />
         </div>
-        <div className="3/4 overflow-y-auto">
+        <div className=" overflow-y-auto">
           <ArticlesCardList
             category={category}
             articles={filteredArticles}

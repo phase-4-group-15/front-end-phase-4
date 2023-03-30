@@ -3,8 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 
 const ArticlesCardList = ({ category, articles, setArticles  }) => {
     const navigate = useNavigate();
-  
-    // const [articles, setArticles] = useState([]);
+
+
+   
   
     useEffect(() => {
       fetch('http://localhost:3004/articles')
@@ -16,6 +17,10 @@ const ArticlesCardList = ({ category, articles, setArticles  }) => {
     const filteredArticles = category
       ? articles.filter((article) => article.category === category)
       : articles;
+
+      if (filteredArticles.length === 0) {
+        return <div className="text-2xl ml-12 text-teal-500">No article of this category</div>;
+      }
   
     const handleLike = (id) => {
       fetch(`http://localhost:3004/articles/${id}`, {
