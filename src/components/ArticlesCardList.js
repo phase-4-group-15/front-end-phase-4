@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-const ArticlesCardList = ({ category }) => {
+const ArticlesCardList = ({ category, articles, setArticles  }) => {
     const navigate = useNavigate();
   
-    const [articles, setArticles] = useState([]);
+    // const [articles, setArticles] = useState([]);
   
     useEffect(() => {
       fetch('http://localhost:3004/articles')
@@ -47,15 +47,18 @@ const ArticlesCardList = ({ category }) => {
     };
   
     return (
-      <div className="grid grid-cols-3 gap-4 p-4">
+        <div className="grid grid-cols-3 gap-4 p-4">
         {filteredArticles.map((article) => (
           <div key={article.id} className="bg-white rounded-lg shadow-md p-5 relative">
-            <Link
-              to={`/articles/${article.id}`}
-              className="text-xl font-semibold cursor-pointer hover:text-blue-500 border-b border-teal-600"
-            >
-              {article.title}
-            </Link>
+            <div className="flex justify-between items-center">
+              <Link
+                to={`/articles/${article.id}`}
+                className="text-xl font-semibold cursor-pointer hover:text-blue-500 border-b border-teal-600"
+              >
+                {article.title}
+              </Link>
+              <div className="text-sm font-medium text-teal-600">{article.category}</div>
+            </div>
             <p className="text-gray-700 mt-2 mb-4">{`${article.description.slice(0, 150)}${
               article.description.length > 150 ? '...' : ''
             }`}</p>
@@ -77,6 +80,7 @@ const ArticlesCardList = ({ category }) => {
           </div>
         ))}
       </div>
+      
     );
   };
   
