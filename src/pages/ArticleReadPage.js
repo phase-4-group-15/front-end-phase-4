@@ -17,10 +17,10 @@ const ArticleReadPage = () => {
   }
 
   return (
-    <div className="p-4">
+    <div className=" p-4 w-3/4 flex justify-center items-center ml-40 ">
       <div className="bg-white rounded-lg shadow-md p-5">
         <h2 className="text-3xl font-semibold mb-4">{article.title}</h2>
-        <img src={article.image} alt={article.title} className="w-full mb-4" />
+        <img src={article.image} alt={article.title} className="w-full  mb-4" />
         <p className="text-gray-700 mb-4">{article.description}</p>
         <div className="flex justify-between border-t pt-4">
           <div className="flex justify-around">

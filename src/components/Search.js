@@ -1,6 +1,6 @@
 const Search = () => {
     return ( 
-        <form className="relative w-3/4 mt-3 ml-14">
+        <form className="relative w-5/6 mt-3 ml-5 mr-5 ">
         <input
           name="search"
           type="text"

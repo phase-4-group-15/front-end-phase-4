@@ -46,10 +46,10 @@ const ArticlesCardList = () => {
     <div className="grid grid-cols-3 gap-4 p-4">
       {articles.map(article => (
         <div key={article.id} className="bg-white rounded-lg shadow-md p-5 relative">
-          <Link to={`/articles/${article.id}`} className="text-xl font-semibold cursor-pointer hover:text-blue-500">{article.title}</Link>
-          <p className="text-gray-700 mb-4">{`${article.description.slice(0, 150)}${article.description.length > 150 ? "..." : ""}`}</p>
+          <Link to={`/articles/${article.id}`} className="text-xl font-semibold cursor-pointer hover:text-blue-500 border-b border-teal-600">{article.title}</Link>
+          <p className="text-gray-700 mt-2 mb-4">{`${article.description.slice(0, 150)}${article.description.length > 150 ? "..." : ""}`}</p>
           <div className="">
-            <div className="flex justify-between   border">
+            <div className="flex justify-between border-teal-300  border-t">
               <div className="flex justify-around">
                 <button className="text-gray-500 hover:text-blue-500 mr-2" onClick={() => handleLike(article.id)}>+ {article.likes}</button>
                 <button className="text-gray-500 hover:text-red-500 mr-2" onClick={() => handleDislike(article.id)}>- {article.dislikes}</button>

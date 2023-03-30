@@ -5,8 +5,8 @@ import ArticleReadPage from "./ArticleReadPage";
 
 const ArticlesPage = () => {
     return (
-    <div className="flex ">
-      <div className="w-1/5">
+    <div className="flex p-5 ">
+      <div className="w-1/4 h-screen">
           <Sidebar />
       </div>
       <div className="flex-grow">
@@ -15,7 +15,7 @@ const ArticlesPage = () => {
         </div>
 
            {/* <ArticleReadPage /> */}
-        <div className="flex-grow overflow-y-auto">
+        <div className="3/4 overflow-y-auto">
            <ArticlesCardList />
         </div>
       </div>
