@@ -19,7 +19,7 @@ const ArticlesCardList = ({ category, articles, setArticles  }) => {
       : articles;
 
       if (filteredArticles.length === 0) {
-        return <div className="text-2xl ml-12 text-teal-500">No article of this category</div>;
+        return <div className="text-2xl ml-12 text-red-700">No article of this category</div>;
       }
   
     const handleLike = (id) => {

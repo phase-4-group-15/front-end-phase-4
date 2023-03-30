@@ -10,6 +10,7 @@ const Navbar = ({isAuthenticated}) => {
         <div className="flex items-center flex-shrink-0 text-teal-500 font-bold justify-center">
           <Link to="/"  exact className=" ml-5">Home</Link>
           <Link to="/articles"  exact className="ml-5">Articles</Link>
+          <Link to="/createarticle"  exact className="ml-5"> create Articles</Link>
           {isAuthenticated? ( 
               <>
                 {/* <Link to="/articles"  exact className="ml-5"></Link> */}

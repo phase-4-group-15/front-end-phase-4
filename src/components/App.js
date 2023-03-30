@@ -6,6 +6,7 @@ import { Routes , Route, useNavigate} from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import ArticlesPage from '../pages/ArticlesPage';
 import ArticleReadPage from '../pages/ArticleReadPage';
+import CreateArticle from '../pages/CreateArticle';
 function App() {
 
   const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -21,6 +22,7 @@ function App() {
             <>
               <Route path="/articles" element={<ArticlesPage />} /> 
               <Route  path='/articles/:id' element={< ArticleReadPage/>}/>
+              <Route  path='/createarticle' element={< CreateArticle/>}/>
             </>
           )}
         </Routes>
