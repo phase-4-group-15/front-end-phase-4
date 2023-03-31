@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import {  useNavigate } from "react-router-dom";
 
-const CreateArticle = () => {
+const CreateArticle = ({userId}) => {
     const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
@@ -13,13 +13,17 @@ const CreateArticle = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    const newArticle = { title, category, description, imageUrl };
-    fetch("http://localhost:3004/articles", {
+    const user_id = userId
+    const newArticle = { title, category, description, imageUrl, user_id };
+
+    fetch("http://localhost:3000/articles", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newArticle),
     })
       .then((response) => {
+        console.log(newArticle)
+        console.log(response)
         if (response.ok) {
           navigate("/articles");
         } else {

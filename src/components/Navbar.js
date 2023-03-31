@@ -6,7 +6,7 @@ const Navbar = ({isAuthenticated, setIsAuthenticated}) => {
     const navigate = useNavigate()
 
     function handleLogout() {
-        fetch("http://127.0.0.1:3000/users/logout", { method: "DELETE" }).then((r) => {
+        fetch("http://127.0.0.1:3000/logout", { method: "DELETE" }).then((r) => {
           if (r.ok) {
             // setUser(null);
             setIsAuthenticated(false);

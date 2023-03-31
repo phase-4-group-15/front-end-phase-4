@@ -3,21 +3,22 @@ import ArticlesCardList from "../components/ArticlesCardList";
 import Search from "../components/Search";
 import Sidebar from "../components/Sidebar";
 
-const ArticlesPage = () => {
+const ArticlesPage = ({username, userId}) => {
  
 
   const [category, setCategory] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredArticles, setFilteredArticles] = useState([]);
-
+  
   const handleSearch = (query) => {
     setSearchQuery(query);
   };
 
   useEffect(() => {
-    fetch("http://localhost:3000/users/articles")
+    fetch(`http://localhost:3000/articles`)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         const filtered = data.filter((article) =>
           article.title.toLowerCase().includes(searchQuery.toLowerCase())
         );

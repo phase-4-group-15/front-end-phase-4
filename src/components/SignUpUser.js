@@ -11,7 +11,7 @@ const SignUpUser = ({ setIsAuthenticated }) => {
         const form = e.target;
         const formData = new FormData(form);
         try {
-          const response = await fetch('http://127.0.0.1:3000/users/signup', {
+          const response = await fetch('http://127.0.0.1:3000/signup', {
             method: 'POST',
             body: formData,
           })

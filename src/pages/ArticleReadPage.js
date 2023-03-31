@@ -7,7 +7,7 @@ const ArticleReadPage = () => {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:3000/users/articles/${id}`)
+    fetch(`http://localhost:3000/articles/${id}`)
       .then(response => response.json())
       .then(data => {
         console.log(data)
