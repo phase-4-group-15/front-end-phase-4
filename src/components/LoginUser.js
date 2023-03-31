@@ -1,13 +1,9 @@
 import React, { useState } from 'react'
 import {  Link } from "react-router-dom"
 
+const LoginUser = ({  handleLogin }) => {
 
-const LoginUser = ({ setIsAuthenticated, handleLogin }) => {
-
-
-
-
-    return ( 
+  return ( 
     <div className="flex justify-center items-center">
         <form class="w-full max-w-sm shadow-xl rounded-xl p-5 mt-4 " noValidate no-autocomplete onSubmit={handleLogin} >
               <h1 className="text-2xl text-teal-500 text-center mb-6  font-bold"> User login</h1>

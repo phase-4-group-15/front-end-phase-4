@@ -1,0 +1,32 @@
+
+
+.hero {
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	font-size: x-large;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+h1{
+    color: aqua;
+    font-weight: 100%;
+}
+button {
+	border: 1px solid blueviolet;
+	border-radius: 20px;
+	padding: 10px;
+	margin-right: 60px;
+	font-size: 15px;
+}
+#download {
+	background-color: blueviolet;
+	color: white;
+    
+}
+.herotext h1 {
+	color: rgb(8, 151, 20);
+    font-size: 40px;
+    font-weight: 500;
+    
+}

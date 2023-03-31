@@ -2,12 +2,13 @@ import LandingPage from '../pages/LandingPage';
 import LoginPage from '../pages/LoginPage';
 import SignupPage from '../pages/SignupPage';
 import Navbar from './Navbar';
-import { Routes , Route} from 'react-router-dom'
+import { Routes , Route, useNavigate} from 'react-router-dom'
 import React, { useState} from 'react'
 import ArticlesPage from '../pages/ArticlesPage';
 import ArticleReadPage from '../pages/ArticleReadPage';
 import CreateArticle from '../pages/CreateArticle';
-import { useNavigate} from "react-router-dom"
+import Footer from '../pages/Footer';
+
 
 function App() {
 
@@ -50,7 +51,7 @@ console.log(userId);
 console.log( username);
 
   return (
-    <div className="App">
+    <div className="">
         <Navbar setIsAuthenticated={setIsAuthenticated} isAuthenticated={isAuthenticated} />
         <Routes>
           <Route path="/login" element={<LoginPage setIsAuthenticated={setIsAuthenticated} handleLogin={handleLogin}/>} />
@@ -63,7 +64,9 @@ console.log( username);
               <Route  path='/createarticle' element={< CreateArticle userId={userId}/>}/>
             </>
           )}
+         
         </Routes>
+        <Footer/>
     </div>
   );
 }

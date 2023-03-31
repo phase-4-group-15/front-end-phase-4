@@ -1,0 +1,13 @@
+.footer-cont {
+	/* background-color: red; */
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-left: 25%;
+	margin-right: 25%;
+	/* text-align: left; */
+}
+.footer {
+	background-color: rgb(204, 192, 209);
+	padding: 40px;
+}

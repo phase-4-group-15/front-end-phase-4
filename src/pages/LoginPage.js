@@ -7,7 +7,7 @@ const LoginPage = ({setIsAuthenticated, handleLogin}) => {
   const [showLogin, setShowLogin] = useState(true);
 
   return ( 
-    <div className="max-w-500 mx-auto my-0 mt-12 px-16">
+    <div className="max-w-500 mx-auto my-0 mt-12 px-16 h-screen">
       <div className="">
         <div className="flex justify-center  mb-4">
           <button className={`text-teal-600 font-bold px-4 rounded ${showLogin ? "bg-teal-100" : ""}`} onClick={() => setShowLogin(true)}>Login as User</button>
