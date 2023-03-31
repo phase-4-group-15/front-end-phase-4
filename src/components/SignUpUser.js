@@ -28,7 +28,7 @@ const SignUpUser = ({ setIsAuthenticated }) => {
       }
       
     return ( 
-      <div className="flex justify-center items-center ">
+      <div className="flex justify-center items-center h-screen ">
       <form class="w-full max-w-sm shadow-xl rounded-xl p-5 mt-4  "noValidate no-autocomplete
        onSubmit={handleSubmit}
        >

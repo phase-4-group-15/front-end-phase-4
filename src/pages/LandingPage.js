@@ -1,8 +1,9 @@
 // import "./LandingPage.css";
+import article from "../images/article.jpg"
 
 const LandingPage = () => {
   return (
-    <div className="mt-1">
+    <div className="h-screen">
       <div className=" flex items-center justify-around text-xl mt-0 mx-10">
         <div className="">
           <h1 className="text-teal-500  font-medium text-4xl">
@@ -24,7 +25,8 @@ const LandingPage = () => {
           </button>
         </div>
         <img
-          src="https://i.postimg.cc/rwQ1TJ9V/output-onlinegiftools-1.gif"
+          src=
+          "https://i.postimg.cc/rwQ1TJ9V/output-onlinegiftools-1.gif"
           alt=""
         />
       </div>

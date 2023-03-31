@@ -4,7 +4,7 @@ import {  Link } from "react-router-dom"
 const LoginUser = ({  handleLogin }) => {
 
   return ( 
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center h-screen">
         <form class="w-full max-w-sm shadow-xl rounded-xl p-5 mt-4 " noValidate no-autocomplete onSubmit={handleLogin} >
               <h1 className="text-2xl text-teal-500 text-center mb-6  font-bold"> User login</h1>
           <div class="md:flex md:items-center mb-6">

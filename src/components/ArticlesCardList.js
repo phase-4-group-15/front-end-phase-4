@@ -65,11 +65,11 @@ const ArticlesCardList = ({ category, articles, setArticles  }) => {
             <div className="flex justify-between items-center">
               <Link
                 to={`/articles/${article.id}`}
-                className="text-xl font-semibold cursor-pointer hover:text-blue-500 border-b border-teal-600"
+                className="text-xl font-semibold cursor-pointer hover:text-blue-500  border-teal-600"
               >
                 {article.title}
               </Link>
-              <div className="text-sm font-medium text-teal-600">{article.category}</div>
+              {/* <div className="text-sm font-medium text-teal-600">{article.category}</div> */}
             </div>
             <p className="text-gray-700 mt-2 mb-4">{`${article.description.slice(0, 80)}${
               article.description.length > 15 ? '...' : ''

@@ -6,7 +6,7 @@ const CreateArticle = ({userId}) => {
     const navigate = useNavigate();
 
   const [title, setTitle] = useState("");
-  const [category, setCategory] = useState("Tech");
+  const [category, setCategory] = useState("Technology");
   const [description, setDescription] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [error, setError] = useState("");
@@ -37,7 +37,7 @@ const CreateArticle = ({userId}) => {
   };
   
   return (
-    <div className="flex  mt-3 justify-center">
+    <div className="flex  mt-3 justify-center mb-10">
       <form
         onSubmit={handleSubmit}
         className="w-1/2 p-9 rounded-xl shadow-lg bg-white"
@@ -89,7 +89,7 @@ const CreateArticle = ({userId}) => {
             onChange={(event) => setCategory(event.target.value)}
             className="border border-teal-400 p-2 w-full rounded-md"
           >
-            <option value="Tech">Tech</option>
+            <option value="Technolgy">Technology</option>
             <option value="Business">Business</option>
             <option value="Politics">Politics</option>
             <option value="Fashion">Fashion</option>
