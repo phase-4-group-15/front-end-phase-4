@@ -15,18 +15,30 @@ const ArticlesPage = ({username, userId}) => {
   };
 
   useEffect(() => {
-    fetch(`http://localhost:3000/articles`)
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        const filtered = data.filter((article) =>
-          article.title.toLowerCase().includes(searchQuery.toLowerCase())
-        );
-        setFilteredArticles(filtered);
-      })
-      .catch((error) => console.log(error));
+    const sessionId = localStorage.getItem('sessionId');
+    fetch('http://localhost:3000/articles', {
+      headers: {
+        'Authorization': `Session ${sessionId}`
+      }
+    })
+    .then((response) => {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('Network response was not ok.');
+      }
+    })
+    .then((data) => {
+      console.log(data);
+      const filtered = data.filter((article) =>
+        article.title.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+      setFilteredArticles(filtered);
+    })
+    .catch((error) => console.log(error));
   }, [searchQuery]);
-
+  
+  
   return (
     <div className="flex p-5 ">
       <div className=" ">

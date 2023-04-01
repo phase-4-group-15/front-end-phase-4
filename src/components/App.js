@@ -8,6 +8,7 @@ import CreateArticle from '../pages/CreateArticle';
 import Footer from '../pages/Footer';
 import LoginUser from './LoginUser';
 import SignUpUser from './SignUpUser';
+import AddReviewForm from '../pages/AddReviewForm';
 
 
 function App() {
@@ -19,7 +20,7 @@ function App() {
   const [username, setUsername] = useState(null);
   
 
-  const handleLogin = (e) => {
+ const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
@@ -35,7 +36,8 @@ function App() {
         }
       })
       .then(data => {
-      
+        localStorage.setItem('sessionId', data.sessionId);
+        console.log(data.sessionId);
         setIsAuthenticated(true);
         setUsername(data.username); 
         setUserId(data.id);
@@ -62,6 +64,7 @@ console.log( username);
               <Route path="/articles" element={<ArticlesPage isAuthenticated={isAuthenticated} userId={userId} username={username}/>} /> 
               <Route  path='/articles/:id' element={< ArticleReadPage/>}/>
               <Route  path='/createarticle' element={< CreateArticle userId={userId}/>}/>
+              <Route path='/addreview' element={<AddReviewForm />}/>
             </>
           )}
          

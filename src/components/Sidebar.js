@@ -10,6 +10,7 @@ const Sidebar = ({ setCategory }) => {
     "Travel",
     "Self Improvement",
     "Fitness",
+    "Sports",
 
   ]);
 
@@ -28,7 +29,7 @@ const Sidebar = ({ setCategory }) => {
         {categories.map((category) => (
           <li 
             key={category}
-            className="cursor-pointer mb-3 text-teal-500 border-b border-gray-700 hover:text-teal-900"
+            className="cursor-pointer mb-3 text-blue-400 border-b border-gray-700 hover:text-teal-900"
             onClick={() => handleClick(category)}
           >
             {category}
