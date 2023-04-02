@@ -2,7 +2,7 @@ import {  useEffect } from "react";
 import { Link } from "react-router-dom";
 import deleteIcon from "../images/icon-delete.svg"
 
-const ArticlesCardList = ({ category, articles, setArticles  }) => {
+const ArticlesCardList = ({ category, articles, setArticles,  userId }) => {
 
 
     useEffect(() => {

@@ -53,7 +53,7 @@ console.log(sessionId);
           {isAuthenticated && (
             <>
               <Route path="/articles" element={<ArticlesPage sessionId={sessionId} isAuthenticated={isAuthenticated} userId={userId} username={username}/>} /> 
-              <Route  path='/articles/:id' element={< ArticleReadPage/>}/>
+              <Route  path='/articles/:id' element={< ArticleReadPage userId={userId}/>}/>
               <Route  path='/createarticle' element={< CreateArticle userId={userId}/>}/>
               {/* <Route path='/addreview' element={<AddReviewForm />}/> */}
             </>

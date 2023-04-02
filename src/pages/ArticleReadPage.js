@@ -5,14 +5,14 @@ import AddReviewForm from "./AddReviewForm";
 import axios from 'axios';
 
 
-const ArticleReadPage = () => {
+const ArticleReadPage = ({userId}) => {
   const [article, setArticle] = useState(null);
   const [showReviews, setShowReviews] = useState(false);
   const [showForm, setShowForm] = useState(false); 
   const [reviews, setReviews] = useState([]);
 
   const { id } = useParams();
-  const user_id = 4
+  // const user_id = 4
 
   useEffect(() => {
     fetch(`http://localhost:3000/articles/${id}`)
@@ -69,7 +69,7 @@ const ArticleReadPage = () => {
 
         {showForm && (
           <AddReviewForm   articleId={id}
-          user_id={user_id}
+          user_id={userId}
           onAddReview={onAddReview}
           setReviews={setReviews}
           setArticle={handleSetArticle}

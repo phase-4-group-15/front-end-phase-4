@@ -45,6 +45,7 @@ const ArticlesPage = ({username, userId, sessionId}) => {
             category={category}
             articles={filteredArticles}
             setArticles={setFilteredArticles}
+            userId={userId}
           />
         </div>
       </div>

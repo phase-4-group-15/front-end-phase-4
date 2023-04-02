@@ -17,7 +17,7 @@ const SignUpUser = ({ setIsAuthenticated }) => {
           })
           if (response.ok) {
             setIsAuthenticated(true);
-            navigate('/articles');
+            navigate('/login');
           } else {
             const errorData = await response.json();
             console.log(errorData);
