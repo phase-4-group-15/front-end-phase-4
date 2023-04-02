@@ -10,6 +10,7 @@ import LoginUser from './LoginUser';
 import SignUpUser from './SignUpUser';
 import AddReviewForm from '../pages/AddReviewForm';
 import axios from 'axios';
+import ResetPassword from './ResetPassword';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
   const [userId, setUserId] = useState(null);
   const [username, setUsername] = useState(null);
   const [sessionId, setSessionId] = useState(null);
+  const [error, setError] = useState(null);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -34,9 +36,16 @@ function App() {
         navigate('/articles');
       })
       .catch(error => {
-        console.error('There was a problem with the fetch operation:', error);
+        if (error.response && error.response.status === 401) {
+          setError("Invalid username or password");
+        } else {
+          setError("An error occurred. Please try again later.");
+        }
       });
   };
+  
+
+  
   
 
 console.log(userId);
@@ -47,15 +56,16 @@ console.log(sessionId);
     <div className="">
         <Navbar setIsAuthenticated={setIsAuthenticated} isAuthenticated={isAuthenticated} />
         <Routes>
-          <Route path="/login" element={<LoginUser setIsAuthenticated={setIsAuthenticated} handleLogin={handleLogin}/>} />
+          <Route path="/login" element={<LoginUser error={error} setIsAuthenticated={setIsAuthenticated} handleLogin={handleLogin}/>} />
           <Route path="/Signup" element={<SignUpUser setIsAuthenticated={setIsAuthenticated} />} />
           <Route path="/" element={<LandingPage setIsAuthenticated={setIsAuthenticated} />} />
+          <Route path='/reset_password' element={<ResetPassword />}/>
           {isAuthenticated && (
             <>
               <Route path="/articles" element={<ArticlesPage sessionId={sessionId} isAuthenticated={isAuthenticated} userId={userId} username={username}/>} /> 
               <Route  path='/articles/:id' element={< ArticleReadPage userId={userId}/>}/>
               <Route  path='/createarticle' element={< CreateArticle userId={userId}/>}/>
-              {/* <Route path='/addreview' element={<AddReviewForm />}/> */}
+              
             </>
           )}
          
