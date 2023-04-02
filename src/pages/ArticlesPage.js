@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import ArticlesCardList from "../components/ArticlesCardList";
 import Search from "../components/Search";
 import Sidebar from "../components/Sidebar";
+import axios from "axios";
 
-const ArticlesPage = ({username, userId}) => {
+const ArticlesPage = ({username, userId, sessionId}) => {
  
+  console.log(sessionId)
 
   const [category, setCategory] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
@@ -15,28 +17,18 @@ const ArticlesPage = ({username, userId}) => {
   };
 
   useEffect(() => {
-    const sessionId = localStorage.getItem('sessionId');
-    fetch('http://localhost:3000/articles', {
+    axios.get('http://localhost:3000/articles', {
       headers: {
         'Authorization': `Session ${sessionId}`
       }
     })
-    .then((response) => {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error('Network response was not ok.');
-      }
-    })
-    .then((data) => {
-      console.log(data);
-      const filtered = data.filter((article) =>
-        article.title.toLowerCase().includes(searchQuery.toLowerCase())
-      );
+    .then(response => {
+      const data = response.data;
+      const filtered = data.filter(article => article.title.toLowerCase().includes(searchQuery.toLowerCase()));
       setFilteredArticles(filtered);
     })
-    .catch((error) => console.log(error));
-  }, [searchQuery]);
+    .catch(error => console.log(error));
+  }, [searchQuery, sessionId]);
   
   
   return (

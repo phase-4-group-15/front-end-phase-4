@@ -9,7 +9,7 @@ import Footer from '../pages/Footer';
 import LoginUser from './LoginUser';
 import SignUpUser from './SignUpUser';
 import AddReviewForm from '../pages/AddReviewForm';
-
+import axios from 'axios';
 
 function App() {
 
@@ -18,29 +18,19 @@ function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [userId, setUserId] = useState(null);
   const [username, setUsername] = useState(null);
-  
+  const [sessionId, setSessionId] = useState(null);
 
- const handleLogin = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-    fetch('http://localhost:3000/login', {
-      method: 'POST',
-      body: formData
-    })
+    axios.post('http://localhost:3000/login', formData)
       .then(response => {
-        if (response.ok) {
-          return response.json();
-        } else {
-          throw new Error('Network response was not ok.');
-        }
-      })
-      .then(data => {
-        localStorage.setItem('sessionId', data.sessionId);
-        console.log(data.sessionId);
+        const { sessionId, user } = response.data;
+        setSessionId(sessionId);
         setIsAuthenticated(true);
-        setUsername(data.username); 
-        setUserId(data.id);
+        setUsername(user.username);
+        setUserId(user.id);
         navigate('/articles');
       })
       .catch(error => {
@@ -51,6 +41,7 @@ function App() {
 
 console.log(userId);
 console.log( username);
+console.log(sessionId);
 
   return (
     <div className="">
@@ -61,7 +52,7 @@ console.log( username);
           <Route path="/" element={<LandingPage setIsAuthenticated={setIsAuthenticated} />} />
           {isAuthenticated && (
             <>
-              <Route path="/articles" element={<ArticlesPage isAuthenticated={isAuthenticated} userId={userId} username={username}/>} /> 
+              <Route path="/articles" element={<ArticlesPage sessionId={sessionId} isAuthenticated={isAuthenticated} userId={userId} username={username}/>} /> 
               <Route  path='/articles/:id' element={< ArticleReadPage/>}/>
               <Route  path='/createarticle' element={< CreateArticle userId={userId}/>}/>
               <Route path='/addreview' element={<AddReviewForm />}/>
