@@ -3,6 +3,30 @@ import {  Link } from "react-router-dom"
 
 const LoginUser = ({  handleLogin }) => {
 
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  function handleLogin(event) {
+    event.preventDefault();
+    event.target.reset();
+
+    const user = { username, password };
+
+    fetch('http://localhost:3000/login', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ user }),
+    })
+      .then((r) => r.json())
+      .then((response) => {
+        localStorage.token = response.jwt;
+        setCurrentUser(response.user);
+      });
+  }
+
   return ( 
     <div className="flex justify-center items-center h-screen">
         <form class="w-full max-w-sm shadow-xl rounded-xl p-5 mt-4 " noValidate no-autocomplete onSubmit={handleLogin} >
@@ -15,9 +39,7 @@ const LoginUser = ({  handleLogin }) => {
               </label>
             </div>
             <div class="md:w-2/3">
-              <input className="  border-2  border-gray-100 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-200" id="username" name="username" type="text" placeholder="Jane Doe"
-               required
-               autoComplete="off"
+              <input className="  border-2  border-gray-100 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-200" id="username" name="username" type="text" placeholder="Jane Doe" onChange={(e) => setUsername(e.target.value)} autoComplete="off"
              />
             </div>
           </div>
@@ -29,9 +51,7 @@ const LoginUser = ({  handleLogin }) => {
             </div>
             <div class="md:w-2/3">
               <input className="  border-2  border-gray-100 rounded-lg w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-green-200"  id="inline-password" type="password" placeholder="******************"
-               name="password"
-               required
-               autoComplete="off"
+               name="password" onChange={(e) => setPassword(e.target.value)} autoComplete="off"
               />
             </div>
           </div>
