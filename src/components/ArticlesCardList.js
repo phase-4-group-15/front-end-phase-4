@@ -71,8 +71,8 @@ const ArticlesCardList = ({ category, articles, setArticles  }) => {
               </Link>
               {/* <div className="text-sm font-medium text-teal-600">{article.category}</div> */}
             </div>
-            <p className="text-gray-700 mt-2 mb-4">{`${article.description.slice(0, 80)}${
-              article.description.length > 15 ? '...' : ''
+            <p className="text-gray-700 mt-2 mb-4">{`${article.description.slice(0, 100)}${
+              article.description.length > 25 ? '...' : ''
             }`}</p>
             <div className="">
               <div className="flex justify-between border-blue-300  border-t">

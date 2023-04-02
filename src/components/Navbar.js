@@ -30,7 +30,7 @@ const Navbar = ({isAuthenticated, setIsAuthenticated}) => {
                 <Link to="/articles"  exact className="ml-5">articles</Link>
                 <Link to="/createarticle"  exact className="ml-5"> create Articles</Link>
                 <Link  onClick={handleLogout} to="/logout" exact className="ml-5">Logout</Link>
-                <Link to='/AddReview'>AddRReview</Link>
+                {/* <Link to='/AddReview'>AddRReview</Link> */}
               </>
             ):(
               <>

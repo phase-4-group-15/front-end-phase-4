@@ -1,5 +1,5 @@
-// import "./LandingPage.css";
-import article from "../images/article.jpg"
+// import "./LandingPage.css"
+import { Link } from "react-router-dom";
 
 const LandingPage = () => {
   return (
@@ -14,17 +14,17 @@ const LandingPage = () => {
             our website explore and create your articles. Don't sweat it!
             Article254 helps you to create your articles
           </p>
-          <button className="border border-blue-400 rounded-2xl px-10 py-2 mr-8 text-base font-medium">
-            Learn More
-          </button>
-          <button
+          <Link to="/login" className="border border-blue-400 rounded-2xl px-10 py-2 mr-8 text-base font-medium">
+            Login Now
+          </Link>
+          <Link to="/signup"
             id="download"
             className="bg-blue-900 rounded-2xl px-10 py-2 text-base font-medium text-white"
           >
-            Download APP
-          </button>
+            Register 
+          </Link>
         </div>
-        <img
+        <img className=""
           src=
           "https://i.postimg.cc/rwQ1TJ9V/output-onlinegiftools-1.gif"
           alt=""

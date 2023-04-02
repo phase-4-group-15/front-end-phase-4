@@ -55,7 +55,7 @@ console.log(sessionId);
               <Route path="/articles" element={<ArticlesPage sessionId={sessionId} isAuthenticated={isAuthenticated} userId={userId} username={username}/>} /> 
               <Route  path='/articles/:id' element={< ArticleReadPage/>}/>
               <Route  path='/createarticle' element={< CreateArticle userId={userId}/>}/>
-              <Route path='/addreview' element={<AddReviewForm />}/>
+              {/* <Route path='/addreview' element={<AddReviewForm />}/> */}
             </>
           )}
          

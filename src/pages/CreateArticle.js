@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import axios from "axios";
 import {  useNavigate } from "react-router-dom";
 
 const CreateArticle = ({userId}) => {
@@ -8,41 +8,63 @@ const CreateArticle = ({userId}) => {
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("Technology");
   const [description, setDescription] = useState("");
-  const [imageUrl, setImageUrl] = useState("");
+  const [image, setImage] = useState("");
   const [error, setError] = useState("");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const user_id = userId
-    const newArticle = { title, category, description, imageUrl, user_id };
+ console.log(userId)
 
-    fetch("http://localhost:3000/articles", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(newArticle),
+//  const handleSubmit = (event) => {
+//   event.preventDefault();
+
+//   const newArticle = { title, category, description, image, userId };
+
+//   axios.post("http://localhost:3000/articles", newArticle, {
+//     headers: { "Content-Type": "application/json" },
+//   })
+//     .then((response) => {
+//       console.log(newArticle)
+//       console.log(response)
+//       if (response.status === 201) {
+//         navigate("/articles");
+//       } else {
+//         throw new Error("Failed to create article.");
+//       }
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//       setError("Failed to create article.");
+//     });
+// };
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+
+  const formData = new FormData();
+  formData.append("title", title);
+  formData.append("category", category);
+  formData.append("description", description);
+  formData.append("image", image);
+  formData.append("userId", userId);
+
+  axios
+    .post("http://localhost:3000/articles", formData)
+    .then((response) => {
+      console.log(response.data);
+      navigate("/articles");
     })
-      .then((response) => {
-        console.log(newArticle)
-        console.log(response)
-        if (response.ok) {
-          navigate("/articles");
-        } else {
-          throw new Error("Failed to create article.");
-        }
-      })
-      .catch((error) => {
-        console.log(error);
-        setError("Failed to create article.");
-      });
-  };
-  
+    .catch((error) => {
+      console.log(error);
+      setError("Failed to create article.");
+    });
+};
+
   return (
     <div className="flex  mt-3 justify-center mb-10">
       <form
         onSubmit={handleSubmit}
         className="w-1/2 p-9 rounded-xl shadow-lg bg-white"
       >
-        <h2 className="text-2xl text-center text-teal-500 font-semibold mb-2">Create New Article</h2>
+        <h2 className="text-2xl text-center text-blue-500 font-semibold mb-2">Create New Article</h2>
         <div className="mb-2">
           <label htmlFor="title" className="block appearance-none text-gray-700 font-medium mb-1 leading-tight focus:outline-none focus:shadow-outline">
             Title
@@ -52,7 +74,7 @@ const CreateArticle = ({userId}) => {
             id="title"
             value={title}
             onChange={(event) => setTitle(event.target.value)}
-            className="border border-teal-400 p-2 w-full rounded-md"
+            className="border border-blue-400 p-2 w-full rounded-md"
           />
         </div>
         <div className="mb-2">
@@ -64,19 +86,19 @@ const CreateArticle = ({userId}) => {
             rows="9"
             value={description}
             onChange={(event) => setDescription(event.target.value)}
-            className="border border-teal-400 p-2 w-full rounded-md "
+            className="border border-blue-400 p-2 w-full rounded-md "
           ></textarea>
         </div>
         <div className="mb-2">
-          <label htmlFor="imageUrl" className="block text-gray-700 font-medium mb-1">
+          <label htmlFor="image" className="block text-gray-700 font-medium mb-1">
             Image URL
           </label>
           <input
             type="text"
-            id="imageUrl"
-            value={imageUrl}
-            onChange={(event) => setImageUrl(event.target.value)}
-            className="border border-teal-400 p-2 w-full rounded-md"
+            id="image"
+            value={image}
+            onChange={(event) => setImage(event.target.value)}
+            className="border border-blue-400 p-2 w-full rounded-md"
           />
         </div>
         <div className="mb-8">
@@ -87,18 +109,20 @@ const CreateArticle = ({userId}) => {
             id="category"
             value={category}
             onChange={(event) => setCategory(event.target.value)}
-            className="border border-teal-400 p-2 w-full rounded-md"
+            className="border border-blue-400 p-2 w-full rounded-md"
           >
             <option value="Technolgy">Technology</option>
-            <option value="Business">Business</option>
-            <option value="Politics">Politics</option>
+            <option value="Food & Drink ">Food & Drink</option>
+            <option value="Travel">Travel</option>
+            <option value="Fitness">Fitness</option>
+            <option value="Sports">Sports</option>
             <option value="Fashion">Fashion</option>
-            <option value="Comedy">Comedy</option>
+            <option value="Self Improvement">Self Improvement</option>
           </select>
         </div>
       
        
-        <button type="submit" className="bg-teal-500 w-full hover:bg-teal-700 text-white font-bold py-2 px-4 rounded">
+        <button type="submit" className="bg-blue-500 w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
           Create Article
         </button>
       </form>
