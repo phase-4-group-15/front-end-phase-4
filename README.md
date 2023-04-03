@@ -1,70 +1,108 @@
-# Getting Started with Create React App
+# Article254
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the Frontend of a group project created in march 2023 at the end of phase 4 of our Software Engineering Bootcamp at Moringa School.
 
-## Available Scripts
+## Contributors
 
-In the project directory, you can run:
+Nyokabi Kamau
+Abdishukri Mohamed
+Aisha Jufe
+Elvis Rono
+# Introduction
 
-### `npm start`
+- During our time at Moringa, we saw that there is need for a platform for documenting and creating articles For authors and those e interested in writing there articles.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Description
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- We developed a website application that offers users a place to publish articles and track there expeerience. This will allow us to establish an even wider community because any internet user will be able to subscribe to access more content.
 
-### `npm test`
+# Technologies and Tools Used
+* React 
+* CSS, Tailwind For styling pages
+* Vercel - Hosting the Frontend
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# MVPs
 
-### `npm run build`
+A user can:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* view articles
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+* Add a review
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Be able to log in and out of their account
 
-### `npm run eject`
+* Can give a rating
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Can like or dislike
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+A Reader:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+* Sign up for
 
-## Learn More
+* Be able to give a review
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Be able to create new article and delete an existing article
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Can give a rating
 
-### Code Splitting
+* Can like or dislike
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# LInk to the backend repository
 
-### Making a Progressive Web App
+* Backend link : https://github.com/phase-4-group-15/back-end-project-phase-4
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+### Installation steps
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+* This App is live, but you can also run it locally; here is the live link: https://article254.vercel.app/
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+# Installation steps
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Clone the repository
+
+```
+https://github.com/phase-4-group-15/front-end-phase-4.git
+```
+
+Open in a directory
+
+```
+cd phase-4-group-15/front-end-phase-4
+```
+
+Open in a terminal
+
+```
+code .
+```
+
+Install the dependencies
+
+```
+npm install
+```
+Start the Server
+
+```
+npm start
+```
+
+
+
+# License
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
