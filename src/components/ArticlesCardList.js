@@ -49,6 +49,7 @@ const ArticlesCardList = ({ category, articles, setArticles,  userId }) => {
       fetch(`http://localhost:3000/articles/${id}`, { method: 'DELETE' })
         .then((response) => {
           if (response.ok) {
+            console.log(response)
             setArticles(articles.filter((article) => article.id !== id));
           } else {
             throw new Error('Not your article');

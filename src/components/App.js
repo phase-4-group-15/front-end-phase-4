@@ -71,7 +71,7 @@ console.log(sessionId);
           )}
          
         </Routes>
-        <Footer/>
+        {/* <Footer/> */}
     </div>
   );
 }
