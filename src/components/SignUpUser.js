@@ -15,7 +15,7 @@ const handleSubmit = async (e) => {
   const form = e.target;
   const formData = new FormData(form);
   try {
-    const response = await fetch('http://127.0.0.1:3000/signup', {
+    const response = await fetch('https://api-article254.onrender.com/signup', {
       method: 'POST',
       body: formData,
     })

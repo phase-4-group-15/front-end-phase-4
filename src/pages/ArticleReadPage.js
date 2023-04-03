@@ -15,7 +15,7 @@ const ArticleReadPage = ({userId}) => {
   // const user_id = 4
 
   useEffect(() => {
-    fetch(`http://localhost:3000/articles/${id}`)
+    fetch(`https://api-article254.onrender.com/articles/${id}`)
       .then(response => response.json())
       .then(data => {
         console.log(data)
@@ -25,7 +25,7 @@ const ArticleReadPage = ({userId}) => {
   }, [id]);
 
   const handleDeleteReview = (reviewId) => {
-    axios.delete(`http://localhost:3000/reviews/${reviewId}`)
+    axios.delete(`https://api-article254.onrender.com/reviews/${reviewId}`)
       .then(response => {
         const updatedReviews = article.reviews.filter(review => review.id !== reviewId);
         setArticle({ ...article, reviews: updatedReviews });

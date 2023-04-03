@@ -13,28 +13,6 @@ const CreateArticle = ({userId}) => {
 
  console.log(userId)
 
-//  const handleSubmit = (event) => {
-//   event.preventDefault();
-
-//   const newArticle = { title, category, description, image, userId };
-
-//   axios.post("http://localhost:3000/articles", newArticle, {
-//     headers: { "Content-Type": "application/json" },
-//   })
-//     .then((response) => {
-//       console.log(newArticle)
-//       console.log(response)
-//       if (response.status === 201) {
-//         navigate("/articles");
-//       } else {
-//         throw new Error("Failed to create article.");
-//       }
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//       setError("Failed to create article.");
-//     });
-// };
 
 const handleSubmit = (event) => {
   event.preventDefault();
@@ -46,7 +24,7 @@ const handleSubmit = (event) => {
   formData.append("image", image);
   formData.append("userId", userId);
 
-  axios.post("http://localhost:3000/articles", formData)
+  axios.post("https://api-article254.onrender.com/articles", formData)
     .then((response) => {
       console.log(response.data);
       navigate("/articles");

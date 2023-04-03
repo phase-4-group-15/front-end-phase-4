@@ -27,7 +27,7 @@ function App() {
     e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
-    axios.post('http://localhost:3000/login', formData)
+    axios.post('https://api-article254.onrender.com/login', formData)
       .then(response => {
         const { sessionId, user } = response.data;
         setSessionId(sessionId);

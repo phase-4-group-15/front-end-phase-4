@@ -6,7 +6,7 @@ const ArticlesCardList = ({ category, articles, setArticles,  userId }) => {
 
 
     useEffect(() => {
-      fetch('http://localhost:3000/articles')
+      fetch('https://api-article254.onrender.com/articles')
         .then((response) => response.json())
         .then((data) => {
            console.log(data)
@@ -24,7 +24,7 @@ const ArticlesCardList = ({ category, articles, setArticles,  userId }) => {
       }
   
     const handleLike = (id) => {
-      fetch(`http://localhost:3000/articles/${id}/like`, {
+      fetch(`https://api-article254.onrender.com/articles/${id}/like`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ likes: articles.find((article) => article.id === id).likes + 1 }),
@@ -35,7 +35,7 @@ const ArticlesCardList = ({ category, articles, setArticles,  userId }) => {
     };
   
     const handleDislike = (id) => {
-      fetch(`http://localhost:3000/articles/${id}/dislike`, {
+      fetch(`https://api-article254.onrender.com/articles/${id}/dislike`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ dislikes: articles.find((article) => article.id === id).dislikes + 1 }),
@@ -46,7 +46,7 @@ const ArticlesCardList = ({ category, articles, setArticles,  userId }) => {
     };
   
     const handleDelete = (id) => {
-      fetch(`http://localhost:3000/articles/${id}`, { method: 'DELETE' })
+      fetch(`https://api-article254.onrender.com/articles/${id}`, { method: 'DELETE' })
         .then((response) => {
           if (response.ok) {
             console.log(response)

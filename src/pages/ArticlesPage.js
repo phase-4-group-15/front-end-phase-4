@@ -18,7 +18,7 @@ const ArticlesPage = ({username, userId, sessionId}) => {
   };
 
   useEffect(() => {
-    axios.get('http://localhost:3000/articles', {
+    axios.get('https://api-article254.onrender.com/articles', {
       headers: {
         'Authorization': `Session ${sessionId}`
       }

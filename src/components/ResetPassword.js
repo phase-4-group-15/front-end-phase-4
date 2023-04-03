@@ -13,7 +13,7 @@ const ResetPassword = () => {
 const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.patch(`http://localhost:3000/reset/${username}`, {
+      const response = await axios.patch(`https://api-article254.onrender.com/reset/${username}`, {
         password: password
       });
       setMessage(response.data.message);

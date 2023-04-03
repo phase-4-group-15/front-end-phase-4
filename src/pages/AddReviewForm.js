@@ -24,7 +24,7 @@ const AddReviewForm = ({setArticle, user_id, articleId, setReviews, reviews, onA
     formData.append('review[comment]', comment);
     formData.append('review[rating]', rating);
 
-    axios.post('http://localhost:3000/reviews', formData)
+    axios.post('https://api-article254.onrender.com/reviews', formData)
       .then((response) => {
         if (response.status === 201) {
           setArticle(response.data);
