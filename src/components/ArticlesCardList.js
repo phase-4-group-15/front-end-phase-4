@@ -79,10 +79,10 @@ const ArticlesCardList = ({ category, articles, setArticles,  userId }) => {
               <div className="flex justify-between border-blue-300  border-t">
                 <div className="flex justify-around">
                   <button className="text-gray-500 hover:text-blue-500 mr-5 mt-3" onClick={() => handleLike(article.id)}>
-                  <ion-icon name="thumbs-up-outline"></ion-icon>{article.likes}
+                    <ion-icon name="thumbs-up-outline"></ion-icon>{article.likes}
                   </button>
                   <button className="text-gray-500 hover:text-red-500 mr-2 mt-3" onClick={() => handleDislike(article.id)}>
-                  <ion-icon name="thumbs-down-outline"></ion-icon> {article.dislikes}
+                    <ion-icon name="thumbs-down-outline"></ion-icon> {article.dislikes}
                   </button>
                 </div>
                 <button className="text-red-500 hover:text-red-500 mt-3 " onClick={() => handleDelete(article.id)}>

@@ -30,7 +30,7 @@ const handleSubmit = async (e) => {
         <div className="md:flex md:items-center mb-6">
           <div className="md:w-1/3">
             <label className="block text-gray-600 font-bold md:text-right mb-1 md:mb-0 pr-4" htmlFor="inline-name">
-              Email
+              Username 
             </label>
           </div>
           <div className="md:w-2/3">
