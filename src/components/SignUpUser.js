@@ -1,39 +1,52 @@
 import { useNavigate} from "react-router-dom"
 import {  Link } from "react-router-dom"
+import { useState } from "react"
 
 const SignUpUser = ({ setIsAuthenticated }) => {
 
     const navigate = useNavigate()
 
+    const [errors, setErrors] = useState([]);
+
     // register Author
-    const handleSubmit = async (e) => {
-        e.preventDefault();
-        const form = e.target;
-        const formData = new FormData(form);
-        try {
-          const response = await fetch('http://127.0.0.1:3000/signup', {
-            method: 'POST',
-            body: formData,
-          })
-          if (response.ok) {
-            setIsAuthenticated(true);
-            navigate('/login');
-          } else {
-            const errorData = await response.json();
-            console.log(errorData);
-          }
-        } catch (error) {
-          console.error(error);
-        }
-      }
+  
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const formData = new FormData(form);
+  try {
+    const response = await fetch('http://127.0.0.1:3000/signup', {
+      method: 'POST',
+      body: formData,
+    })
+    if (response.ok) {
+      setIsAuthenticated(true);
+      navigate('/login');
+    } else {
+      const errorData = await response.json();
+      setErrors(errorData.errors);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}
       
     return ( 
-      <div className="flex justify-center items-center h-screen ">
+      <div className="flex justify-center items-center mb-20 ">
       <form class="w-full max-w-sm shadow-xl rounded-xl p-5 mt-4  "noValidate no-autocomplete
        onSubmit={handleSubmit}
        >
         <h1 className="text-2xl text-blue-500 text-center mb-6  font-bold">Signup As Reader </h1>
-    
+           {errors.length > 0 && (
+                <div className="bg-red-100 border mb-4 border-red-400 text-red-700 px-4 py-3 rounded ">
+                  <strong className="font-bold">Error:</strong>
+                  <ul className="list-disc ml-4">
+                    {errors.map((error, index) => (
+                      <li key={index}>{error}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
         <div class="md:flex md:items-center mb-6">   
           <div class="md:w-1/3">
             <label class="block text-gray-700 font-bold md:text-right mb-1 md:mb-0 pr-4" for="inline-username">

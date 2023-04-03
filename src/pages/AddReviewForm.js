@@ -4,6 +4,8 @@ import axios from 'axios';
 const AddReviewForm = ({setArticle, user_id, articleId, setReviews, reviews, onAddReview, setShowForm }) => {
   const [comment, setComment] = useState('');
   const [rating, setRating] = useState('');
+  const [errors, setErrors] = useState('');
+
 
   const handleCommentChange = (event) => {
     setComment(event.target.value);
@@ -23,24 +25,37 @@ const AddReviewForm = ({setArticle, user_id, articleId, setReviews, reviews, onA
     formData.append('review[rating]', rating);
 
     axios.post('http://localhost:3000/reviews', formData)
-      .then((res) => {
-        if (res.status === 201) {
-          setArticle(res.data);
+      .then((response) => {
+        if (response.status === 201) {
+          setArticle(response.data);
           setComment('');
           setRating('');
           onAddReview();
           setShowForm(false);
-          setReviews([...reviews, res.data.review]);
+          setReviews([...reviews, response.data.review]);
         }
       })
       .catch((error) => {
         console.log(error);
+        setErrors(error.response.data.errors)
       });
   };
 
   return (
     <div className='flex justify-center m-10'>
       <form className="p-3 bg-blue-50 rounded-md w-full " onSubmit={handleSubmit}>
+
+            {errors.length > 0 && (
+                <div className="bg-red-100 border mb-4 border-red-400 text-red-700 px-4 py-3 rounded ">
+                  <strong className="font-bold">Error:</strong>
+                  <ul className="list-disc ml-4">
+                    {errors.map((error, index) => (
+                      <li key={index}>{error}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
         <div className="mb-4">
           <label htmlFor="comment" className="block mb-2 font-semibold text-gray-700">Comment</label>
           <textarea

@@ -3,6 +3,7 @@ import ArticlesCardList from "../components/ArticlesCardList";
 import Search from "../components/Search";
 import Sidebar from "../components/Sidebar";
 import axios from "axios";
+import Advertisement from "../components/Advertisement";
 
 const ArticlesPage = ({username, userId, sessionId}) => {
  
@@ -37,8 +38,11 @@ const ArticlesPage = ({username, userId, sessionId}) => {
         <Sidebar setCategory={setCategory} />
       </div>
       <div className="flex-grow ">
-        <div className="py-4">
-          <Search onSearch={handleSearch} />
+        <div className="flex justify-around">
+          <div className="py-4">
+            <Search onSearch={handleSearch} />
+          </div>
+          <Advertisement/>
         </div>
         <div className=" overflow-y-auto">
           <ArticlesCardList

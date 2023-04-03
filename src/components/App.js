@@ -11,6 +11,7 @@ import SignUpUser from './SignUpUser';
 import AddReviewForm from '../pages/AddReviewForm';
 import axios from 'axios';
 import ResetPassword from './ResetPassword';
+import Advertisement from './Advertisement';
 
 function App() {
 
@@ -65,7 +66,7 @@ console.log(sessionId);
               <Route path="/articles" element={<ArticlesPage sessionId={sessionId} isAuthenticated={isAuthenticated} userId={userId} username={username}/>} /> 
               <Route  path='/articles/:id' element={< ArticleReadPage userId={userId}/>}/>
               <Route  path='/createarticle' element={< CreateArticle userId={userId}/>}/>
-              
+              <Route path="/advertisement" element={<Advertisement userId={userId}/>}/>
             </>
           )}
          

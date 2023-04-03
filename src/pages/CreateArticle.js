@@ -9,7 +9,7 @@ const CreateArticle = ({userId}) => {
   const [category, setCategory] = useState("Technology");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState("");
-  const [error, setError] = useState("");
+  const [errors, setErrors] = useState("");
 
  console.log(userId)
 
@@ -46,15 +46,14 @@ const handleSubmit = (event) => {
   formData.append("image", image);
   formData.append("userId", userId);
 
-  axios
-    .post("http://localhost:3000/articles", formData)
+  axios.post("http://localhost:3000/articles", formData)
     .then((response) => {
       console.log(response.data);
       navigate("/articles");
     })
     .catch((error) => {
       console.log(error);
-      setError("Failed to create article.");
+      setErrors(error.response.data.errors);
     });
 };
 
@@ -65,6 +64,16 @@ const handleSubmit = (event) => {
         className="w-1/2 p-9 rounded-xl shadow-lg bg-white"
       >
         <h2 className="text-2xl text-center text-blue-500 font-semibold mb-2">Create New Article</h2>
+        {errors.length > 0 && (
+                <div className="bg-red-100 border mb-4 border-red-400 text-red-700 px-4 py-3 rounded ">
+                  <strong className="font-bold">Error:</strong>
+                  <ul className="list-disc ml-4">
+                    {errors.map((error, index) => (
+                      <li key={index}>{error}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
         <div className="mb-2">
           <label htmlFor="title" className="block appearance-none text-gray-700 font-medium mb-1 leading-tight focus:outline-none focus:shadow-outline">
             Title
